@@ -38,16 +38,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hotel-reservasi-api:latest
             docker stop hotel-api-prod || true
             docker rm hotel-api-prod || true
-            docker run -d \
-              -p 3000:3000 \
-              --name hotel-api-prod \
-              --restart always \
-              -e PORT=${{ secrets.PORT }} \
-              -e MONGO_URI=${{ secrets.MONGO_URI }} \
-              -e JWT_SECRET=${{ secrets.JWT_SECRET }} \
-              -e MIDTRANS_SERVER_KEY=${{ secrets.MIDTRANS_SERVER_KEY }} \
-              -e MIDTRANS_CLIENT_KEY=${{ secrets.MIDTRANS_CLIENT_KEY }} \
-              -e CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }} \
-              -e CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }} \
-              -e CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} \
-              ${{ secrets.DOCKERHUB_USERNAME }}/hotel-reservasi-api:latest
+            docker run -d -p 3000:3000 --name hotel-api-prod --restart always -e PORT=${{ secrets.PORT }} -e MONGO_URI=${{ secrets.MONGO_URI }} -e JWT_SECRET=${{ secrets.JWT_SECRET }} -e MIDTRANS_SERVER_KEY=${{ secrets.MIDTRANS_SERVER_KEY }} -e MIDTRANS_CLIENT_KEY=${{ secrets.MIDTRANS_CLIENT_KEY }} -e CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }} -e CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }} -e CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} ${{ secrets.DOCKERHUB_USERNAME }}/hotel-reservasi-api:latest
