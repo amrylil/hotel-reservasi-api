@@ -1,0 +1,16 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  # Layanan untuk API backend Anda
+  api:
+    build: .
+    ports:
+      - "3000:3000" # Mapping port [HOST]:[CONTAINER]
+    env_file:
+      - .env # Memuat environment variables dari file .env
+    volumes:
+      - .:/app # Sinkronisasi kode lokal dengan container untuk hot-reloading
+      - /app/node_modules # Mencegah folder node_modules lokal menimpa yang di container
+    command: npm run server # Menjalankan server dengan nodemon untuk development
