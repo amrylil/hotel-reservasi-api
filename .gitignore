@@ -1,0 +1,54 @@
+# Node.js .gitignore
+
+# Dependencies
+# Direktori ini berisi semua paket yang diinstal dan bisa dibuat ulang
+# dengan menjalankan `npm install`.
+/node_modules
+/.npm
+
+# Logs
+# File log yang dibuat oleh aplikasi atau package manager.
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment Variables
+# File ini berisi kunci API, password database, dan data sensitif lainnya.
+# Selalu simpan file .env.example sebagai gantinya.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example
+
+# Build & Distribution Output
+# Folder untuk hasil kompilasi atau build.
+/dist
+/build
+/.out/
+
+# Testing & Coverage
+# Laporan yang dihasilkan oleh framework testing.
+/coverage
+.nyc_output
+
+# OS Generated Files
+# File sistem operasi yang tidak relevan dengan kode.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor Directories
+# Pengaturan spesifik untuk editor kode yang digunakan oleh developer.
+.idea/
+.vscode/
+*.swp
