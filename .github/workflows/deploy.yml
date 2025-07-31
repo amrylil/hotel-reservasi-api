@@ -49,8 +49,6 @@ jobs:
             IMAGE_TAG=${{ github.sha }}
             PROJECT_DIR=/home/ubuntu/hotel-reservasi-api
             cd $PROJECT_DIR
-            # Perbaikan ada di baris ini:
-            echo "${{ secrets.ENV_FILE }}" > .env
             docker pull $IMAGE_NAME:$IMAGE_TAG
             sed -i "s|image: .*|image: $IMAGE_NAME:$IMAGE_TAG|g" docker-compose.yml
             docker compose up -d
