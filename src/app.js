@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://hotel-reservasi-sandy.vercel.app/",
+    origin: "https://hotel-reservasi-sandy.vercel.app",
     credentials: true,
   })
 );
